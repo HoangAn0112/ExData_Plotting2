@@ -9,8 +9,8 @@ library(dplyr)
   # Group data by year  
   data <- tapply(data$Emissions,data$year,sum)
   # Plot
+  png("plot5.png", width=480, height=480)
   plot(names(data), data, col = "red", xlab="YEARS", ylab = "Total emissions",
      main = "Total emission by car source")
   # Save plot
-  png("plot5.png", width=480, height=480)
   dev.off()

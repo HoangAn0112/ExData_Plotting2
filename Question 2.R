@@ -7,7 +7,7 @@
   Bal <- subset(NEI, NEI$fips=="24510")
   data <- tapply(Bal$Emissions,Bal$year,sum)
   # Plot
+  png("plot2.png", width=480, height=480)
   plot(names(data), data, col = "red", xlab="YEARS", ylab = "Total emissions")
   # Save plot
-  png("plot2.png", width=480, height=480)
   dev.off()

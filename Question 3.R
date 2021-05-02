@@ -9,11 +9,11 @@
   data <- aggregate(Emissions~type+year,Bal,sum)
   
   # Plot
+  png("plot3.png", width=480, height=480)
   library(ggplot2)
   g <- ggplot(data,aes(year, Emissions, color = type))
   g + xlab("Year") + ylab("Emissions") + 
     ggtitle("Total Emissions per type in Baltimore") +geom_line() 
   
   # Save plot
-  png("plot3.png", width=480, height=480)
   dev.off()

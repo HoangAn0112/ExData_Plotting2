@@ -7,13 +7,12 @@
   # Group data by year  
   data1 <- tapply(data1$Emissions,data1$year,sum)
   Q6 <- rbind(data,data1)
-  # Draw plot
   row.names(Q6) <- c("Baltimore","Los Angeles")
   
   # plotting
+  png("plot6.png", width=480, height=480)
   barplot(Q6,xlab = "Year", ylab = "Total Emission (ton)", legend.text = TRUE,
           main = "Total Emission from motor sources in Baltimore and Los Angeles")
   # Save plot
-  png("plot6.png", width=480, height=480)
   dev.off()
   
